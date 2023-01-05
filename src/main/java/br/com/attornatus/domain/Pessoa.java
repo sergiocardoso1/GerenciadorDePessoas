@@ -28,7 +28,7 @@ public class Pessoa implements Serializable{
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	private Date dataDeNascimento;
 	
-	@OneToMany(mappedBy = "cidade", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL)
 	private List<Endereco> endereco = new ArrayList<>();
 	
 	public Pessoa() {

@@ -7,7 +7,6 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import br.com.attornatus.domain.Cidade;
 import br.com.attornatus.domain.Endereco;
@@ -75,7 +74,7 @@ public class PessoaServiceImpl implements PessoaService{
 		Pessoa pessoa = new Pessoa(null, objDTO.getNome(), sdf.parse(objDTO.getDataDeNascimento()));
 		Cidade cidade = new Cidade(objDTO.getCidadeId(), null, null);
 		Endereco endereco = new Endereco(null, objDTO.getLogradouro(), objDTO.getCep(), objDTO.getNumero(), pessoa, cidade);
-		endereco.setEnderecoPrincipal(true);
+		endereco.setPrincipal(true);
 		pessoa.getEndereco().add(endereco);
 		if(objDTO.getCidadeId2() != null) {
 			Cidade cidade2 = new Cidade(objDTO.getCidadeId2(), null, null);

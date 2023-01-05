@@ -56,6 +56,7 @@ public class DbServiceImpl {
 		Pessoa pessoa1 = new Pessoa(null, "Sérgio Cardoso", sdf.parse("26/04/1998"));
 		
 		Endereco e1 = new Endereco(null,"Rua das flores","45400000","10",pessoa1, c1);
+		e1.setPrincipal(true);
 		
 		pessoaRepository.save(pessoa1);
 		enderecoRepository.save(e1);

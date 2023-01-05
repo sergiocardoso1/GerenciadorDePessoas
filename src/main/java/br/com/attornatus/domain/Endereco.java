@@ -24,11 +24,12 @@ public class Endereco implements Serializable{
 	private String cep;
 	private String numero;
 	
-	private boolean enderecoPrincipal = false;
+	private boolean principal;
+	
 	
 	@ManyToOne
-	@JsonIgnore
 	@JoinColumn(name = "pessoa_id")
+	@JsonIgnore
 	private Pessoa pessoa;
 	
 	@ManyToOne
@@ -96,12 +97,12 @@ public class Endereco implements Serializable{
 		this.cidade = cidade;
 	}
 
-	public boolean isEnderecoPrincipal() {
-		return enderecoPrincipal;
+	public boolean isPrincipal() {
+		return principal;
 	}
 
-	public void setEnderecoPrincipal(boolean enderecoPrincipal) {
-		this.enderecoPrincipal = enderecoPrincipal;
+	public void setPrincipal(boolean principal) {
+		this.principal = principal;
 	}
 
 	@Override
